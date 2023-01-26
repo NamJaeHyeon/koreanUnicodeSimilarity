@@ -88,7 +88,7 @@ class KoreanUnicode{
         return s*o;
     }
     static getBasicLetter(char){
-        return this.decompose_(char).map((v,i)=>[this.first, this.middle, (x)=>this.last(x-1)][i][v]);
+        return this.decompose_(char).map((v,i)=>[this.first, this.middle, '0'+KoreanUnicode.last][i][v]);
     }
 }
 

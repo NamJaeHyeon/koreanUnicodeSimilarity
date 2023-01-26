@@ -87,6 +87,9 @@ class KoreanUnicode{
         }
         return s*o;
     }
+    static getBasicLetter(char){
+        return this.decompose_(char).map((v,i)=>[this.first, this.middle, (x)=>this.last(x-1)][i][v]);
+    }
 }
 
 // let r = KoreanUnicode.stringSimilarity("ㅊㅇ","천안역");

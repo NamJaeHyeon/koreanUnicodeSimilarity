@@ -7,7 +7,7 @@
 
 ```
 let v1 = KoreanUnicode.similarity(letter1, letter2);
-let v2 = KoreanUnicode.stringSimilarity("ㅊㅇㅇ","천안역")
+let v2 = KoreanUnicode.stringSimilarity(str1,str2)
 ```
 예시
 ```

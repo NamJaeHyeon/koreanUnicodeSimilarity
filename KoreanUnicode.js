@@ -60,10 +60,34 @@ class KoreanUnicode{
         let i = c/588|0;
         return [i,n,f];
     }
+    static stringSimilarity(str1,str2){
+        let p_ = -1;
+        let s = 1;
+        let o = 1;
+        for(let i = 0; i<str1.length; i++){
+            let p = 0;
+            let max = 0;
+            for(let j = 0; j < str2.length; j++){
+                let s_ = this.similarity(str1[i],str2[j]);
+                if(s_ > max){
+                    max = s_;
+                    p = j;
+                }
+            }
+            if (p_+1 == p && max > 0.9){
+                o *= 1.4;
+            } else if (p_+1 == p && max > 0.4){
+                o *= 1.1;
+            } else {
+                o *= 0.9
+            }
+            
+            s *= max+0.1;
+            p_=p;
+        }
+        return s*o;
+    }
 }
-let A = '회';
-let B = '호';
-for(let i = 0; i<A.length; i++){
-    let r = KoreanUnicode.similarity(A[i],B[i]);
-    console.log(A[i],B[i],r);    
-}
+
+// let r = KoreanUnicode.stringSimilarity("ㅊㅇ","천안역");
+// console.log(r);

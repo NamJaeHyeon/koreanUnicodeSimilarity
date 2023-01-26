@@ -4,10 +4,12 @@
 
 - 1글자 유사도
 - 여러글자 유사도
+- 초성, 중성, 종성 분해
 
 ```
 let v1 = KoreanUnicode.similarity(letter1, letter2);
-let v2 = KoreanUnicode.stringSimilarity(str1,str2)
+let v2 = KoreanUnicode.stringSimilarity(str1,str2);
+let [first,middle,last] = KoreanUnicode.getBasicLetter(char);
 ```
 예시
 ```
@@ -40,3 +42,9 @@ for(let i = 0; i<A.length; i++){
 let r = KoreanUnicode.stringSimilarity("ㅊㅇㅇ","천안역");
 console.log(r) // 1.2100000000000002
 ```
+
+```
+let r = KoreanUnicode.getBasicLetter('천'); // ['ㅊ','ㅓ','ㄴ']
+```
+
+

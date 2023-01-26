@@ -6,7 +6,8 @@
 - 여러글자 유사도
 
 ```
-KoreanUnicode.similarity(letter1, letter2);
+let v1 = KoreanUnicode.similarity(letter1, letter2);
+let v2 = KoreanUnicode.stringSimilarity("ㅊㅇㅇ","천안역")
 ```
 예시
 ```
